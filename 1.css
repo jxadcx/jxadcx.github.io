@@ -1,0 +1,17 @@
+body {  
+    margin: 0;  
+    padding: 0;  
+    background-color: #f0f0f0;  
+    font-family: Arial, sans-serif;  
+}  
+.header {  
+    text-align: center;  
+    padding: 20px 0; /* 上下左右的内边距，可以根据需要调整 */  
+    background-color: #fff; /* 可选：给头部添加背景色 */  
+}  
+h1 {  
+    color: #333;  
+    font-size: 3em;  
+    margin: 0;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 可选：文字阴影效果 */  
+}  
