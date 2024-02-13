@@ -1,17 +1,48 @@
 body {  
     margin: 0;  
     padding: 0;  
-    background-color: #f0f0f0;  
+    background-color: #cccccc;  
     font-family: Arial, sans-serif;  
+    text-decoration: none;  
 }  
-.header {  
+
+header {  
     text-align: center;  
     padding: 20px 0; /* 上下左右的内边距，可以根据需要调整 */  
-    background-color: #fff; /* 可选：给头部添加背景色 */  
-}  
-h1 {  
-    color: #333;  
+    background-image: url(top1.jpg);
+    background-size: 100%;
+}
+header{
+
+        height: 60px;
+        font-size: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 99;
+        margin-bottom: 10px;
+    } 
+
+
+.TL{  
+    text-decoration: none;  
+}    
+header h1 {  
+    color: #131212;  
+    text-shadow:  
+    -1px -1px 0 #ff0000,  /* 左上角的红色阴影 */  
+    1px -1px 0 #ff0000,   /* 右上角的红色阴影 */  
+    -1px 1px 0 #ff0000,   /* 左下角的红色阴影 */  
+    1px 1px 0 #ff0000;    /* 右下角的红色阴影 */  
     font-size: 3em;  
     margin: 0;  
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 可选：文字阴影效果 */  
 }  
+#logobox a{
+    text-decoration: none; 
+}
+.logo{ 
+    margin: 20px;
+        width: 100px; 
+        height: 110px;  
+        border-radius: 15px; 
+        /* overflow: hidden; 隐藏超出部分   */
+}
