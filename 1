@@ -1,1 +1,54 @@
 ffmpeg -re -i 111.mp4 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_30716717_7776841&key=5c26d69fb11825131ef6b92ba99dd269&schedule=rtmp&pflag=1
+
+
+
+#安装基本工具
+pkg install vim curl wget git tree -y
+
+#安装主题并开启存储读取权限
+sh -c "$(curl -fsSL https://html.sqlsec.com/termux-install.sh)"
+
+#模拟rootpkg
+cd
+install proot -y
+termux-chroot
+
+#安装kplayer推流工具
+cd
+curl -fsSL get.kplayer.net | bash
+#复制配置文件
+cp -r /home/storage/downloads/config.json /home/kplayer
+#启动运行
+./kplayer play start -d
+
+#修改DNS
+vi /etc/resolv.conf
+nameserver 8.8.8.8
+
+
+
+
+{
+    "version": "2.0.0",
+    "resource": {
+        "lists": [
+            "/home/storage/downloads/video/"
+        ],
+        "extensions": [ "mp4", "flv" ]
+    },
+        "play": {
+            "play_model": "loop",
+            "skip_invalid_resource": true,
+            "fill_strategy": "ratio",
+            "cache_on": false
+    },
+    "output": {
+        "lists": [
+            {
+                "path": "你的推流地址"
+            }
+        ]
+    }
+}
+
+
