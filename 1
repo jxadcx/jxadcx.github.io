@@ -1,0 +1,1 @@
+ffmpeg -re -i 111.mp4 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_30716717_7776841&key=5c26d69fb11825131ef6b92ba99dd269&schedule=rtmp&pflag=1
