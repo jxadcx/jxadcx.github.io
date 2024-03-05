@@ -2,6 +2,34 @@
     <meta charset="UTF-8">  
 </head>
 
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>转换链接为超链接</title>  
+<script>  
+  function convertToLinks() {  
+    var text = document.getElementById("content").textContent;  
+    var links = text.match(/(http|https):\/\/[^\s<>]+/g);  
+    if (links) {  
+      for (var i = 0; i < links.length; i++) {  
+        var link = links[i];  
+        var linkElement = document.createElement("a");  
+        linkElement.href = link;  
+        linkElement.textContent = link;  
+        var textNode = document.createTextNode(text.replace(link, ""));  
+        var parent = document.getElementById("content");  
+        parent.appendChild(linkElement);  
+        parent.appendChild(textNode);  
+      }  
+    }  
+  }  
+</script>  
+</head>  
+<body onload="convertToLinks()">  
+  
+<div id="content">  
+
 http://pan.baidu.com/s/1midbvxY       3pbn     罪与罚与赎的少女     为下载    还行
 链接: http://pan.baidu.com/s/1kUEGQCv 密码: guqe      罪恶王冠      世界观尽毁
 链接: http://pan.baidu.com/s/1qXFmAGO 密码: uea5      我的妹妹最近有点怪      日常   搞笑 略肉
@@ -250,7 +278,10 @@ http://pan.baidu.com/s/1jIyekvW       Another【全13话】替身太悲凉未下
 http://pan.baidu.com/s/1i4EKW8d      失忆症
 
 
-
+</div>  
+  
+</body>  
+</html>
 
 
 
