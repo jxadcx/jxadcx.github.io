@@ -1,32 +1,41 @@
-<head>  
-    <meta charset="UTF-8">  
-</head>
-
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
 <meta charset="UTF-8">  
-<title>转换链接为超链接</title>  
+<title>Convert Links to Hyperlinks with New Lines</title>  
 <script>  
-  function convertToLinks() {  
-    var text = document.getElementById("content").textContent;  
-    var links = text.match(/(http|https):\/\/[^\s<>]+/g);  
-    if (links) {  
-      for (var i = 0; i < links.length; i++) {  
-        var link = links[i];  
-        var linkElement = document.createElement("a");  
-        linkElement.href = link;  
-        linkElement.textContent = link;  
-        var textNode = document.createTextNode(text.replace(link, ""));  
-        var parent = document.getElementById("content");  
-        parent.appendChild(linkElement);  
-        parent.appendChild(textNode);  
+  function convertLinksToHyperlinks() {  
+    // 获取包含链接的文本内容  
+    var content = document.getElementById('content').textContent;  
+    var lines = content.split('\n'); // 按换行符分割文本  
+  
+    // 使用正则表达式匹配链接  
+    var urlPattern = /(https?:\/\/[^\s<>]+)/g;  
+  
+    lines.forEach(function(line) {  
+      var matches = line.match(urlPattern);  
+      if (matches) {  
+        // 遍历每个链接并创建<a>标签  
+        matches.forEach(function(url) {  
+          var link = document.createElement('a');  
+          link.href = url; // 设置链接地址  
+          link.textContent = url; // 设置链接文本  
+          link.target = '_blank'; // 在新标签页中打开链接  
+  
+          // 查找并替换文本中的链接  
+          line = line.replace(url, link.outerHTML);  
+        });  
       }  
-    }  
+  
+      // 添加<br>标签以保留换行  
+      var lineElement = document.createElement('p');  
+      lineElement.innerHTML = line;  
+      document.getElementById('content').appendChild(lineElement);  
+    });  
   }  
 </script>  
 </head>  
-<body onload="convertToLinks()">  
+<body onload="convertLinksToHyperlinks()">  
   
 <div id="content">  
 
