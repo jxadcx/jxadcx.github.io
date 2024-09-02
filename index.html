@@ -6,7 +6,7 @@
 <head>  
     <meta charset="UTF-8">  
     <title>暗淡沉星的个人站</title>  
-    
+
 </head>  
 <body>  
     <header>  
@@ -20,15 +20,60 @@
     <div id="logobox">
         <a href="https://tieba.baidu.com/f?kw=%B0%B5%B5%AD%B3%C1%D0%C7&fr=ala0&tpl=5&dyTabStr=MCwyLDEsMyw2LDQsNSw3LDgsOQ%3D%3D">
             <img class="logo"  src="img/tieba.png">
-        </a>
         <a href="img/tx.png">
-            <img class="logo"  src="tx1.png">
+            <img class="logo"  src="img/tx1.png">
         </a>
         <a href="https://blog.csdn.net/qq_41490154?spm=1000.2115.3001.5343 ">
             <img class="logo"  src="img/csdn.png">
         </a>
+        <a href="https://space.bilibili.com/30716717 ">
+            <img class="logo"  src="http://k.sinaimg.cn/n/sinakd10119/386/w1024h962/20200304/f980-iqmtvwu5188705.jpg/w700d1q75cms.jpg?by=cms_fixed_width">
+        </a>
+        <a href="https://wallpaperscraft.com/">
+            <img class="logo"  src="img/wallpaperscraft.png">
+        </a>
+
     </div> 
+
+    <script src="sakura.js"></script>
+    <dvi id="button_box">
+     <button id="sakura_switch_button" class='button' onclick="switchSakura()">开关樱花特效</button>
+    <script>
+        function switchSakura() {
+            if (isStartSakuraExecuted) {stopp();}
+            else{startSakura()}
+        }     
+    </script>
+
+    <button id="background_switch_Button" class="button">改变背景图</button>
+    <script>
+    let images = [
+        'https://images.wallpaperscraft.com/image/single/girl_silhouette_milky_way_1181590_1280x720.jpg',  // 替换为你的图片路径
+        'https://images.wallpaperscraft.com/image/single/girl_silhouette_planet_1067694_3840x2400.jpg', // 替换为你的图片路径
+        'https://images.wallpaperscraft.com/image/single/silhouette_night_starry_sky_137292_3840x2400.jpg',
+        'https://images.wallpaperscraft.com/image/single/cat_roof_evening_967628_3840x2400.jpg',
+        'https://images.wallpaperscraft.com/image/single/girl_elf_pond_1108949_2560x1080.jpg',
+        'https://images.wallpaperscraft.com/image/single/guy_anime_computer_96990_2560x1080.jpg',
+        'https://images.wallpaperscraft.com/image/single/cube_figure_dark_142157_3840x2160.jpg'
+        
+        // 可以继续添加更多图片路径
+                ];
+
+    let currentIndex = 0;
+
+
+    document.getElementById('background_switch_Button').addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % images.length; // 循环图片数组
+    document.body.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+    document.body.style.backgroundSize = 'cover'; // 确保图片覆盖整个背景
+    document.body.style.backgroundPosition = 'center'; // 确保图片居中显示
+    document.body.style.backgroundRepeat = 'no-repeat'; // 确保图片不重复
+    });
+
+    </script>
+    </dvi>
     
+
     <!-- 其他页面内容可以放在这里 -->  
     <script type="text/javascript" src="https://myhkw.cn/player/js/jquery.min.js"></script>
     <script type="text/javascript" id="myhk" src="https://myhkw.cn/api/player/1725198135119" key="1725198135119" m="1"></script>
