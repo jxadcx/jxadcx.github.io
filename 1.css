@@ -23,6 +23,15 @@ header{
     } 
 
 
+body{
+
+    background-image: url('https://images.wallpaperscraft.com/image/single/cube_figure_dark_142157_3840x2160.jpg');
+    background-attachment: fixed; /* 背景图像固定不动 */
+    background-size: cover; /* 覆盖整个屏幕 */
+    background-position: center center; /* 图像居中 */
+   
+}
+
 .TL{  
     text-decoration: none;  
 }    
@@ -36,13 +45,43 @@ header h1 {
     font-size: 3em;  
     margin: 0;  
 }  
+
+#logobox{
+    display: inline-block;
+    overflow: hidden; /* 防止放大时图标溢出容器 */
+
+}
+
 #logobox a{
     text-decoration: none; 
+
+   
 }
 .logo{ 
     margin: 20px;
         width: 100px; 
         height: 110px;  
         border-radius: 15px; 
+        transition: transform 0.3s ease; /* 平滑的过渡效果 */
+        
         /* overflow: hidden; 隐藏超出部分   */
+}
+
+#logobox:hover .logo {
+    transform: scale(1.1); /* 放大倍 */
+}
+
+
+#button_box{
+
+    position: fixed;       /* 使用fixed定位 */
+    right: 0;              /* 将div的右边距设置为0，使其靠在屏幕右侧 */
+}
+#sakura_switch_button{
+    background-color: #131212;
+    color: #f57f7f;  
+}
+#background_switch_Button{
+    background-color: #131212;
+    color: #fd044f;  
 }
